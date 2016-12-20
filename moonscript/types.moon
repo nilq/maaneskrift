@@ -7,18 +7,18 @@ import unpack from util
 
 -- implicit return does not work on these statements
 manual_return = Set {
-  "foreach", "for", "while", "return"
+  "forhver", "for", "sålænge", "returner"
 }
 
 -- Assigns and returns are bubbled into their bodies.
 -- All cascading statement transform functions accept a second arugment that
 -- is the transformation to apply to the last statement in their body
 cascading = Set {
-  "if", "unless", "with", "switch", "class", "do"
+  "hvis", "medmindre", "med", "scenarie", "klasse", "gør"
 }
 
 terminating = Set {
-  "return", "break"
+  "returner", "slut"
 }
 
 -- type of node as string
@@ -128,7 +128,7 @@ build = setmetatable {
     {"group", body}
 
   do: (body) ->
-    {"do", body}
+    {"gør", body}
 
   assign_one: (name, value) ->
     build.assign {
@@ -194,4 +194,3 @@ NOOP = {"noop"}
   :value_can_be_statement, :mtype, :terminating
   :NOOP
 }
-
