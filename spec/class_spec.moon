@@ -293,5 +293,3 @@ describe "class", ->
 
       assert.same 1 + 100 + 12, Sub!\value!
       assert.same 6, OtherSub!\value!
-
-
